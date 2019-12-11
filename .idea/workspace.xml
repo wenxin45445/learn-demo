@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0b92704a-d138-4589-9d82-4281761eb0bc" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/dubbo-spi/target/" />
+    <ignored path="$PROJECT_DIR$/dubbo-simple/target/" />
+    <ignored path="$PROJECT_DIR$/dubbo-services/target/" />
+    <ignored path="$PROJECT_DIR$/java-spi/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dubbo-spi/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tuling</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/UserServiceImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/services/com.meng.tuling.dubbo.UserService" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/UserServiceImp1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/UserServiceImp2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/DubboSpi.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/spi/DubboSpi.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/simple/DubboServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/simple/DubboSimpleClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/simple/DubboClientServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/simple/DubboSimpleServer.java" />
+        <option value="$PROJECT_DIR$/dubbo-services/src/main/java/com/meng/dubbo/services/user/UserServiceImp1.java" />
+        <option value="$PROJECT_DIR$/dubbo-spi/src/main/java/dubbo/spi/DubboSpi.java" />
+        <option value="$PROJECT_DIR$/dubbo-spi/src/main/java/dubbo/spi/UserServiceImp1.java" />
+        <option value="$PROJECT_DIR$/dubbo-spi/src/main/resources/MATE-INF/services/com.meng.tuling.dubbo.spi.UserService" />
+        <option value="$PROJECT_DIR$/dubbo-spi/src/main/java/com/meng/dubbo/spi/UserServiceImp1.java" />
+        <option value="$PROJECT_DIR$/dubbo-spi/src/main/resources/MATE-INF.services/com.meng.dubbo.spi.UserService" />
+        <option value="$PROJECT_DIR$/dubbo-spi/src/main/resources/MATE-INF.services/com.meng.dubbo.spi.UserServiceSpi" />
+        <option value="$PROJECT_DIR$/dubbo-spi/src/main/resources/META-INF.services/com.meng.dubbo.spi.UserServiceSpi" />
+        <option value="$PROJECT_DIR$/dubbo-spi/src/main/java/com/meng/dubbo/spi/DubboSpi.java" />
+        <option value="$PROJECT_DIR$/dubbo-spi/src/main/resources/META-INF/services/com.meng.dubbo.spi.UserServiceSpi" />
+        <option value="$PROJECT_DIR$/dubbo-services/src/main/java/com/meng/dubbo/services/user/DubboSpi.java" />
+        <option value="$PROJECT_DIR$/dubbo-services/src/main/resources/META-INF/services/com.meng.dubbo.services.user.UserService" />
+        <option value="$PROJECT_DIR$/dubbo-simple/src/main/java/simple/DubboSimpleServer.java" />
+        <option value="$PROJECT_DIR$/dubbo-spi/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo-services/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo-simple/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo-simple/src/main/java/com/meng/tuling/dubbo/simple/DubboSimpleClient.java" />
+        <option value="$PROJECT_DIR$/dubbo-simple/src/main/java/com/meng/tuling/dubbo/simple/DubboSimpleServer.java" />
+        <option value="$PROJECT_DIR$/java-spi/src/main/java/spi/UserServiceSpiImp1.java" />
+        <option value="$PROJECT_DIR$/java-spi/src/main/java/com/meng/dubbo/spi/UserServiceSpiImp1.java" />
+        <option value="$PROJECT_DIR$/java-spi/pom.xml" />
+        <option value="$PROJECT_DIR$/java-spi/src/main/java/com/meng/java/spi/DubboSpi.java" />
+        <option value="$PROJECT_DIR$/java-spi/src/main/java/com/meng/java/spi/JavaSpi.java" />
+        <option value="$PROJECT_DIR$/java-spi/src/main/resources/META-INF/services/com.meng.java.spi.UserServiceSpi" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="35" />
+    <option name="y" value="48" />
+    <option name="width" value="1836" />
+    <option name="height" value="994" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="dubbo-learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dubbo-learn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dubbo-learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dubbo-learn" type="462c0819:PsiDirectoryNode" />
+              <item name="dubbo-services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dubbo-learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dubbo-learn" type="462c0819:PsiDirectoryNode" />
+              <item name="dubbo-simple" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dubbo-learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dubbo-learn" type="462c0819:PsiDirectoryNode" />
+              <item name="dubbo-spi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dubbo-learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dubbo-learn" type="462c0819:PsiDirectoryNode" />
+              <item name="dubbo-spi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dubbo-learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dubbo-learn" type="462c0819:PsiDirectoryNode" />
+              <item name="dubbo-spi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dubbo-learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dubbo-learn" type="462c0819:PsiDirectoryNode" />
+              <item name="dubbo-spi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dubbo-learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dubbo-learn" type="462c0819:PsiDirectoryNode" />
+              <item name="java-spi" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/dubbo-simple/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.20930232" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\projects\tuling-dubbo\java-spi\src\main\resources\META-INF\services" />
+      <recent name="F:\projects\tuling-dubbo\java-spi\src\main\resources" />
+      <recent name="F:\projects\tuling-dubbo\dubbo-services\src\main\resources\MATE-INF" />
+      <recent name="F:\projects\tuling-dubbo\dubbo-spi\src\main\resources\MATE-INF\services" />
+      <recent name="F:\projects\tuling-dubbo\dubbo-spi\src\main\resources\MATE-INF" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.meng.dubbo.spi" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.meng.dubbo.services.user" />
+      <recent name="com.meng.tuling.dubbo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\projects\tuling-dubbo\java-spi\src\main\java" />
+      <recent name="F:\projects\tuling-dubbo\dubbo-spi\src\main\resources\META-INF\services" />
+      <recent name="F:\projects\tuling-dubbo\dubbo-services\src\main\resources\META-INF\services" />
+      <recent name="F:\projects\tuling-dubbo\dubbo-spi\src\main\resources" />
+      <recent name="F:\projects\tuling-dubbo\dubbo-spi\src\main\java\com\meng\dubbo\spi" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.JavaSpi">
+    <configuration name="DubboSimpleClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.meng.tuling.dubbo.simple.DubboSimpleClient" />
+      <module name="dubbo-simple" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.meng.tuling.dubbo.simple.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DubboSimpleServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.meng.tuling.dubbo.simple.DubboSimpleServer" />
+      <module name="dubbo-simple" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.meng.tuling.dubbo.simple.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DubboSpi (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.meng.dubbo.spi.DubboSpi" />
+      <module name="dubbo-spi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.meng.dubbo.spi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DubboSpi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.meng.dubbo.spi.DubboSpi" />
+      <module name="java-spi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.meng.dubbo.spi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaSpi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.meng.java.spi.JavaSpi" />
+      <module name="java-spi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.meng.java.spi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="dubbo-learn" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="dubbo-learn" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JavaSpi" />
+        <item itemvalue="Application.DubboSpi" />
+        <item itemvalue="Application.DubboSimpleClient" />
+        <item itemvalue="Application.DubboSimpleServer" />
+        <item itemvalue="Application.DubboSpi (3)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0b92704a-d138-4589-9d82-4281761eb0bc" name="Default Changelist" comment="" />
+      <created>1575881512996</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575881512996</updated>
+      <workItem from="1575881515749" duration="15977000" />
+      <workItem from="1576026253936" duration="1944000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="17921000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="35" y="48" width="1836" height="994" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12443694" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329849" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24738675" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3821138" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.329849" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.13063063" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/simple/DubboSimpleServer.java</url>
+          <line>15</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/simple/DubboSimpleServer.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/spi/UserServiceImp.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/spi/UserService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/spi/UserServiceImp1.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/spi/UserServiceImp2.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/services/com.meng.tuling.dubbo.spi.UserService" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/spi/DubboSpi.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/simple/DubboSimpleServer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meng/tuling/dubbo/simple/DubboSimpleClient.java" />
+    <entry file="file://$PROJECT_DIR$/dubbo-services/src/main/java/com/meng/dubbo/services/user/UserServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo-services/src/main/java/com/meng/dubbo/services/user/UserServiceImp2.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo-services/src/main/java/com/meng/dubbo/services/user/UserServiceImp1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo-spi/src/main/resources/MATE-INF/services/com.meng.tuling.dubbo.spi.UserService" />
+    <entry file="file://$PROJECT_DIR$/dubbo-spi/src/main/resources/MATE-INF/services/com.meng.dubbo.services.user.UserService" />
+    <entry file="file://$PROJECT_DIR$/dubbo-spi/src/main/java/com/meng/dubbo/spi/UserServiceSpi.java" />
+    <entry file="file://$PROJECT_DIR$/dubbo-spi/src/main/java/com/meng/dubbo/spi/UserServiceSpiImp2.java" />
+    <entry file="file://$PROJECT_DIR$/dubbo-spi/src/main/java/com/meng/dubbo/spi/UserServiceSpiImp1.java" />
+    <entry file="file://$PROJECT_DIR$/dubbo-spi/src/main/resources/META-INF.services/com.meng.dubbo.spi.UserServiceSpi" />
+    <entry file="jar://D:/develop/jdk/jdk8_231_64/src.zip!/java/util/ServiceLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="506" column="39" selection-start-line="506" selection-start-column="39" selection-end-line="506" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo-spi/src/main/java/com/meng/dubbo/spi/UserServiceSpiImp.java" />
+    <entry file="file://$PROJECT_DIR$/dubbo-services/src/main/resources/MATE-INF/services/com.meng.dubbo.services.user.UserService" />
+    <entry file="file://$PROJECT_DIR$/dubbo-spi/src/main/resources/META-INF/services/com.meng.dubbo.services.user.UserService" />
+    <entry file="file://$PROJECT_DIR$/dubbo-services/src/main/resources/META-INF/services/com.meng.dubbo.services.user.UserService">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo-services/src/main/java/com/meng/dubbo/services/user/DubboSpi.java" />
+    <entry file="file://$PROJECT_DIR$/dubbo-spi/src/main/java/com/meng/dubbo/spi/DubboSpi.java" />
+    <entry file="file://$PROJECT_DIR$/dubbo-simple/src/main/java/com/meng/learn/dubbo/simple/DubboSimpleServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo-services/src/main/java/com/meng/dubbo/services/user/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36" selection-start-column="8" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo-simple/src/main/java/com/meng/learn/dubbo/simple/DubboSimpleClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-spi/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-spi/src/main/java/com/meng/java/spi/UserServiceSpi.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-spi/src/main/java/com/meng/java/spi/UserServiceSpiImp.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-spi/src/main/java/com/meng/java/spi/UserServiceSpiImp2.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-spi/src/main/java/com/meng/java/spi/JavaSpi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-spi/src/main/resources/META-INF/services/com.meng.java.spi.UserServiceSpi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-spi/src/main/java/com/meng/java/spi/UserServiceSpiImp1.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo-services/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo-simple/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo-spi/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20930232" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20930232" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20930232" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20930232" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>dubbo-learn</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20930232" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.alibaba:fastjson:1.2.60</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20930232" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
