@@ -6,10 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="dubbo-simple" />
-        <module name="java-spi" />
-        <module name="dubbo-spi" />
         <module name="dubbo-services" />
+        <module name="java-spi" />
+        <module name="netty-io" />
+        <module name="zookeeper-client" />
+        <module name="dubbo-spi" />
+        <module name="dubbo-simple" />
+        <module name="meng-log" />
+        <module name="zookeeper-agent" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
