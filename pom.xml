@@ -24,6 +24,9 @@
         <module>zookeeper-client</module>
         <module>meng-log</module>
         <module>netty-io</module>
+        <module>drools</module>
+        <module>common</module>
+        <module>meng-aviator</module>
     </modules>
     <dependencyManagement>
         <dependencies>
