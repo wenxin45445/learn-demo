@@ -32,4 +32,3 @@ admin/log.path*/
 /*/target/*.class
 /logs/
 /bin/
-/gibms-*/logs

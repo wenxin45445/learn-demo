@@ -1,36 +1,8 @@
-
-mybatis:
-  mapper-locations: classpath:/mybatis-mapper/*Mapper.xml
-
 server:
-  port: 8080
+  port: 8081
 spring:
   application:
     name: meng-pay
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    druid:
-      async-close-connection-enable: true
-      initial-size: 2
-      max-active: 30
-      max-pool-prepared-statement-per-connection-size: 5
-      max-wait: 10000
-      min-evictable-idle-time-millis: 30001
-      min-idle: 2
-      pool-prepared-statements: true
-      test-on-borrow: true
-      test-on-return: true
-      test-while-idle: true
-      time-between-eviction-runs-millis: 10000
-      validation-query: select 1
-      validation-query-timeout: 1
-#    password: root
-#    url: jdbc:mysql://127.0.0.1:3306/xxl_job?Unicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-#    username: root
-
-    url: jdbc:mysql://29.157.17.108:16063/bmsdb?Unicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-    username: bms
-    password: Ce_Sh1.Pa2s_mydb
   freemarker:
     charset: UTF-8
     request-context-attribute: request
@@ -42,3 +14,21 @@ spring:
     static-path-pattern: /static/**
   resources:
     static-locations: classpath:/static/
+alipay:
+  # 商户私钥，您的PKCS8格式RSA2私钥
+  privateKey:
+  # 支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。
+  publicKey:
+  # 应用ID,您的APPID，收款账号既是您的APPID对应支付宝账号
+  appId:
+  #
+  charset: UTF-8
+  # 支付宝网关
+  gatewayUrl: https://openapi.alipay.com/gateway.do
+  # 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+  # e.g.
+  notifyUrl:
+  # 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+  returnUrl:
+  # 签名方式
+  signType: RSA2
