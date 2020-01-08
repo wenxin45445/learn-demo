@@ -35,7 +35,6 @@ public class AlipayController {
                     @RequestParam String WIDsubject, @RequestParam String WIDbody){
 
         logger.info("[pay] pay start.......");
-        logger.error("[pay] pay start.......");
         //获得初始化的AlipayClient
         AlipayClient alipayClient = new DefaultAlipayClient(alipayConfig.getGatewayUrl(), alipayConfig.getAppId(), alipayConfig.getPrivateKey(), "json", alipayConfig.getCharset(), alipayConfig.getPublicKey(), alipayConfig.getSignType());
 
