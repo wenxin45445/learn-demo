@@ -28,6 +28,7 @@ public class AlipayController {
      * @param WIDtotal_amount 付款金额，必填
      * @param WIDsubject 订单名称，必填
      * @param WIDbody 商品描述，可空
+     * @return  交易结果
      */
     @PostMapping("/pay")
     public String pay(@RequestParam String WIDout_trade_no, @RequestParam String WIDtotal_amount,
@@ -75,7 +76,7 @@ public class AlipayController {
      *  交易查询
      * @param WIDTQout_trade_no 商户订单号，商户网站订单系统中唯一订单号
      * @param WIDTQtrade_no 支付宝交易号
-     * @return
+     * @return 交易结果
      */
     @RequestMapping("/query")
     public String query(@RequestParam String WIDTQout_trade_no, @RequestParam String WIDTQtrade_no){
@@ -108,7 +109,7 @@ public class AlipayController {
      * @param WIDTRrefund_amount 需要退款的金额，该金额不能大于订单金额，必填
      * @param WIDTRrefund_reason 退款的原因说明
      * @param WIDTRout_request_no 标识一次退款请求，同一笔交易多次退款需要保证唯一，如需部分退款，则此参数必传
-     * @return
+     * @return 交易结果
      */
     @RequestMapping("/refund")
     public String refund(@RequestParam String WIDTRout_trade_no, @RequestParam String WIDTRtrade_no, @RequestParam String WIDTRrefund_amount,
@@ -143,7 +144,7 @@ public class AlipayController {
      * @param WIDRQout_trade_no 商户订单号，商户网站订单系统中唯一订单号
      * @param WIDRQtrade_no 支付宝交易号
      * @param WIDRQout_request_no 请求退款接口时，传入的退款请求号，如果在退款请求时未传入，则该值为创建交易时的外部交易号，必填
-     * @return
+     * @return 交易结果
      */
     @RequestMapping("/refund/query")
     public String refundQuery(@RequestParam String WIDRQout_trade_no, @RequestParam String WIDRQtrade_no, @RequestParam String WIDRQout_request_no){
@@ -174,7 +175,7 @@ public class AlipayController {
      * 交易关闭
      * @param WIDTCout_trade_no 商户订单号，商户网站订单系统中唯一订单号
      * @param WIDTCtrade_no 支付宝交易号
-     * @return
+     * @return 交易结果
      */
     @RequestMapping("/close")
     public String close(@RequestParam String WIDTCout_trade_no, @RequestParam String WIDTCtrade_no){
