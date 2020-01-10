@@ -30,15 +30,19 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- freemarker 模板 -->
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!-- freemarker 模板 -->
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
-        </dependency>
-        <dependency>
+        </dependency>-->
+       <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+        </dependency>-->
         <!-- 自定义日志处理器 -->
         <dependency>
             <groupId>com.meng.learn</groupId>

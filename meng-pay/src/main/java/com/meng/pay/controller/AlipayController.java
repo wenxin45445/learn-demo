@@ -5,6 +5,8 @@ import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.request.*;
 import com.meng.config.AlipayConfig;
+import com.meng.config.AlipayNotifyEntity;
+import com.meng.config.AlipayStatusEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -130,11 +132,11 @@ public class AlipayController {
         try {
             result = alipayClient.execute(alipayRequest).getBody();
         } catch (AlipayApiException e) {
-            logger.error("[query] 退款异常,原因：{}", e.getMessage(), e);
+            logger.error("[refund] 退款异常,原因：{}", e.getMessage(), e);
         }
 
         //输出
-        logger.info("[query] 退款流程完成，退款结果：{}", result);
+        logger.info("[refund] 退款流程完成，退款结果：{}", result);
         return  result;
     }
 
@@ -162,11 +164,11 @@ public class AlipayController {
         try {
             result = alipayClient.execute(alipayRequest).getBody();
         } catch (AlipayApiException e) {
-            logger.error("[query] 退款查询异常,原因：{}", e.getMessage(), e);
+            logger.error("[refundQuery] 退款查询异常,原因：{}", e.getMessage(), e);
         }
 
         //输出
-        logger.info("[query] 退款查询流程完成，退款查询结果：{}", result);
+        logger.info("[refundQuery] 退款查询流程完成，退款查询结果：{}", result);
         return  result;
     }
 
@@ -192,12 +194,32 @@ public class AlipayController {
         try {
             result = alipayClient.execute(alipayRequest).getBody();
         } catch (AlipayApiException e) {
-            logger.error("[query] 交易关闭异常,原因：{}", e.getMessage(), e);
+            logger.error("[close] 交易关闭异常,原因：{}", e.getMessage(), e);
         }
 
         //输出
-        logger.info("[query] 交易关闭流程完成，交易关闭结果：{}", result);
+        logger.info("[close] 交易关闭流程完成，交易关闭结果：{}", result);
         return  result;
     }
 
+    @RequestMapping("/payNotify")
+    public String payNotify(@RequestParam(required = false) AlipayNotifyEntity notifyEntity, @RequestParam(required = false) String notify_type,
+                            @RequestParam(required = false) String trade_no, @RequestParam(required = false) String out_trade_no, @RequestParam(required = false) String buyer_id){
+        String result = AlipayStatusEnum.TRADE_FINISHED.getStatusMsg();
+        //输出
+        logger.info("[payNotify] 通知请求流程完成，交易关闭结果：{}", result);
+        logger.info("[payNotify] 通知请求参数打印 notifyEntity：{}， notify_type：{}， trade_no：{}， out_trade_no：{}， buyer_id：{}", notifyEntity, notify_type, trade_no, out_trade_no, buyer_id);
+        return result;
+    }
+
+
+    @RequestMapping("/payReturn")
+    public String payReturn(@RequestParam(required = false) AlipayNotifyEntity notifyEntity, @RequestParam(required = false) String notify_type,
+                            @RequestParam(required = false) String trade_no, @RequestParam(required = false) String out_trade_no, @RequestParam(required = false) String buyer_id){
+        String result = AlipayStatusEnum.TRADE_FINISHED.getStatusMsg();
+        //输出
+        logger.info("[payReturn]回调流程完成，交易关闭结果：{}", result);
+        logger.info("[payReturn] 回调请求参数打印 notifyEntity：{}， notify_type：{}， trade_no：{}， out_trade_no：{}， buyer_id：{}", notifyEntity, notify_type, trade_no, out_trade_no, buyer_id);
+        return result;
+    }
 }
