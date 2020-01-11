@@ -1,8 +1,14 @@
+
+### maven #####
 */target/
 !.mvn/wrapper/maven-wrapper.jar
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+.mvn/
+/*/target/*.class
+/logs/
+/bin/
 
 ### STS ###
 .apt_generated
@@ -22,7 +28,6 @@
 admin/log.path*/
 *.DS_Store
 
-
 ### NetBeans ###
 /nbproject/private/
 /build/
@@ -31,7 +36,29 @@ admin/log.path*/
 /nbdist/
 /.nb-gradle/
 
-.mvn/
-/*/target/*.class
-/logs/
-/bin/
+*/bin/*
+/target
+*/target/*
+/target/*
+*/logs/*
+*/log/*
+*/build
+lib/*
+*.class
+
+/.idea
+*/.settings/*
+*/.myeclipse/*
+*/*.classpath
+*/*.project
+*/*.mymetadata
+*/*.myumldata
+*.classpath
+*.project
+*/*jar-with-dependencies.jar
+/.metadata
+/.recommenders
+/.gradle
+/.settings
+/*.gradle~
+*.ser
