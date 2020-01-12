@@ -203,23 +203,21 @@ public class AlipayController {
     }
 
     @RequestMapping("/payNotify")
-    public String payNotify(@RequestParam(required = false) AlipayNotifyEntity notifyEntity, @RequestParam(required = false) String notify_type,
-                            @RequestParam(required = false) String trade_no, @RequestParam(required = false) String out_trade_no, @RequestParam(required = false) String buyer_id){
+    public String payNotify(AlipayNotifyEntity notifyEntity){
         String result = AlipayStatusEnum.TRADE_FINISHED.getStatusMsg();
         //输出
         logger.info("[payNotify] 通知请求流程完成，交易关闭结果：{}", result);
-        logger.info("[payNotify] 通知请求参数打印 notifyEntity：{}， notify_type：{}， trade_no：{}， out_trade_no：{}， buyer_id：{}", notifyEntity, notify_type, trade_no, out_trade_no, buyer_id);
-        return result;
+        logger.info("[payNotify] 通知请求参数打印 notifyEntity：{}，", notifyEntity);
+        return notifyEntity.toString();
     }
 
 
     @RequestMapping("/payReturn")
-    public String payReturn(@RequestParam(required = false) AlipayNotifyEntity notifyEntity, @RequestParam(required = false) String notify_type,
-                            @RequestParam(required = false) String trade_no, @RequestParam(required = false) String out_trade_no, @RequestParam(required = false) String buyer_id){
+    public String payReturn(AlipayNotifyEntity notifyEntity){
         String result = AlipayStatusEnum.TRADE_FINISHED.getStatusMsg();
         //输出
         logger.info("[payReturn]回调流程完成，交易关闭结果：{}", result);
-        logger.info("[payReturn] 回调请求参数打印 notifyEntity：{}， notify_type：{}， trade_no：{}， out_trade_no：{}， buyer_id：{}", notifyEntity, notify_type, trade_no, out_trade_no, buyer_id);
-        return result;
+        logger.info("[payReturn] 回调请求参数打印 notifyEntity：{}，", notifyEntity);
+        return notifyEntity.toString();
     }
 }

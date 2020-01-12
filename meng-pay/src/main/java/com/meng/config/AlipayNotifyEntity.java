@@ -14,7 +14,7 @@ public class AlipayNotifyEntity {
     /**
      * 通知时间
      */
-    private Date notify_time;
+    private String notify_time;
 
     /**
      * 通知类型
@@ -165,11 +165,11 @@ public class AlipayNotifyEntity {
      */
     private String passback_params;
 
-    public Date getNotify_time() {
+    public String getNotify_time() {
         return notify_time;
     }
 
-    public void setNotify_time(Date notify_time) {
+    public void setNotify_time(String notify_time) {
         this.notify_time = notify_time;
     }
 
