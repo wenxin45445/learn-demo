@@ -10,7 +10,8 @@ public class DubboSimpleClient {
     public static void main(String[] args) {
         new DubboSimpleClient().buildRemoteSerbice(remoteUrl).getUser("dubbo-simple-client");
     }
-    public UserService buildRemoteSerbice(String remoteUrl){
+
+    public UserService buildRemoteSerbice(String remoteUrl) {
         ApplicationConfig applicationConfig = new ApplicationConfig();
         applicationConfig.setName("simple-client");
         ReferenceConfig<UserService> referenceConfig = new ReferenceConfig<UserService>();

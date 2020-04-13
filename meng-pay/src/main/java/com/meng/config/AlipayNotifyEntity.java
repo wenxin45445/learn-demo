@@ -61,107 +61,107 @@ public class AlipayNotifyEntity {
     private String trade_no;
 
     /**
-     * 	开发者的app_id	String(32)	是	支付宝分配给开发者的应用 ID	2.01407E+15
+     * 开发者的app_id	String(32)	是	支付宝分配给开发者的应用 ID	2.01407E+15
      */
     private String app_id;
 
     /**
-     * 	商户订单号	String(64)	是	原支付请求的商户订单号	6.82379E+15
+     * 商户订单号	String(64)	是	原支付请求的商户订单号	6.82379E+15
      */
     private String out_trade_no;
 
     /**
-     * 	商户业务号	String(64)	否	商户业务 ID，主要是退款通知中返回退款申请的流水号	HZRF001
+     * 商户业务号	String(64)	否	商户业务 ID，主要是退款通知中返回退款申请的流水号	HZRF001
      */
     private String out_biz_no;
 
     /**
-     * 	买家支付宝用户号	String(16)	否	买家支付宝账号对应的支付宝唯一用户号。以 2088 开头的纯 16 位数字	2.0881E+15
+     * 买家支付宝用户号	String(16)	否	买家支付宝账号对应的支付宝唯一用户号。以 2088 开头的纯 16 位数字	2.0881E+15
      */
     private String buyer_id;
 
     /**
-     * 	卖家支付宝用户号	String(30)	否	卖家支付宝用户号	2.0881E+15
+     * 卖家支付宝用户号	String(30)	否	卖家支付宝用户号	2.0881E+15
      */
     private String seller_id;
 
     /**
-     * 	交易状态	String(32)	否	交易目前所处的状态，见交易状态说明	TRADE_CLOSED
+     * 交易状态	String(32)	否	交易目前所处的状态，见交易状态说明	TRADE_CLOSED
      */
     private String trade_status;
 
     /**
-     * 	订单金额	Number(9,2)	否	本次交易支付的订单金额，单位为人民币（元），精确到小数点后2位	20
+     * 订单金额	Number(9,2)	否	本次交易支付的订单金额，单位为人民币（元），精确到小数点后2位	20
      */
     private String total_amount;
 
     /**
-     * 	实收金额	Number(9,2)	否	商家在交易中实际收到的款项，单位为元，精确到小数点后2位	15
+     * 实收金额	Number(9,2)	否	商家在交易中实际收到的款项，单位为元，精确到小数点后2位	15
      */
     private String receipt_amount;
 
     /**
-     * 	开票金额	Number(9,2)	否	用户在交易中支付的可开发票的金额，单位为元，精确到小数点后2位	10
+     * 开票金额	Number(9,2)	否	用户在交易中支付的可开发票的金额，单位为元，精确到小数点后2位	10
      */
     private String invoice_amount;
 
     /**
-     * 	付款金额	Number(9,2)	否	用户在交易中支付的金额，单位为元，精确到小数点后2位	13.88
+     * 付款金额	Number(9,2)	否	用户在交易中支付的金额，单位为元，精确到小数点后2位	13.88
      */
     private String buyer_pay_amount;
 
     /**
-     * 	集分宝金额	Number(9,2)	否	使用集分宝支付的金额，单位为元，精确到小数点后2位	12
+     * 集分宝金额	Number(9,2)	否	使用集分宝支付的金额，单位为元，精确到小数点后2位	12
      */
     private String point_amount;
 
     /**
-     * 	总退款金额	Number(9,2)	否	退款通知中，返回总退款金额，单位为元，精确到小数点后2位	2.58
+     * 总退款金额	Number(9,2)	否	退款通知中，返回总退款金额，单位为元，精确到小数点后2位	2.58
      */
     private String refund_fee;
 
     /**
-     * 	订单标题	String(256)	否	商品的标题/交易标题/订单标题/订单关键字等，是请求时对应的参数，原样通知回来	当面付交易
+     * 订单标题	String(256)	否	商品的标题/交易标题/订单标题/订单关键字等，是请求时对应的参数，原样通知回来	当面付交易
      */
     private String subject;
 
     /**
-     * 	商品描述	String(400)	否	该订单的备注、描述、明细等。对应请求时的body参数，原样通知回来	当面付交易内容
+     * 商品描述	String(400)	否	该订单的备注、描述、明细等。对应请求时的body参数，原样通知回来	当面付交易内容
      */
     private String body;
 
     /**
-     * 	交易创建时间	Date	否	该笔交易创建的时间。格式为yyyy-MM-dd HH:mm:ss	2015/4/27 15:45
+     * 交易创建时间	Date	否	该笔交易创建的时间。格式为yyyy-MM-dd HH:mm:ss	2015/4/27 15:45
      */
     private String gmt_create;
 
     /**
-     * 	交易付款时间	Date	否	该笔交易的买家付款时间。格式为yyyy-MM-dd HH:mm:ss	2015/4/27 15:45
+     * 交易付款时间	Date	否	该笔交易的买家付款时间。格式为yyyy-MM-dd HH:mm:ss	2015/4/27 15:45
      */
     private String gmt_payment;
 
     /**
-     * 	交易退款时间	Date	否	该笔交易的退款时间。格式为yyyy-MM-dd HH:mm:ss.S	45:57.3
+     * 交易退款时间	Date	否	该笔交易的退款时间。格式为yyyy-MM-dd HH:mm:ss.S	45:57.3
      */
     private String gmt_refund;
 
     /**
-     * 	交易结束时间	Date	否	该笔交易结束时间。格式为yyyy-MM-dd HH:mm:ss	2015/4/29 15:45
+     * 交易结束时间	Date	否	该笔交易结束时间。格式为yyyy-MM-dd HH:mm:ss	2015/4/29 15:45
      */
     private String gmt_close;
 
     /**
-     * 	支付金额信息	String(512)	否	支付成功的各个渠道金额信息，详见资金明细信息说明	[{“amount”:“15.00”,“fundChannel”:“ALIPAYACCOUNT”}] 
+     * 支付金额信息	String(512)	否	支付成功的各个渠道金额信息，详见资金明细信息说明	[{“amount”:“15.00”,“fundChannel”:“ALIPAYACCOUNT”}] 
      */
     private String fund_bill_list;
 
     /**
-     * 	优惠券信息	String(512)	否	本交易支付时所使用的所有优惠券信息，详见优惠券信息说明	[{“amount”:“0.20”,“merchantContribute”:“0.00”,“name”:“一键创建券模板的券名称”,“otherContribute”:“0.20”,“type”:“ALIPAY_DISCOUNT_VOUCHER”,“memo”:“学生卡8折优惠”] 
+     * 优惠券信息	String(512)	否	本交易支付时所使用的所有优惠券信息，详见优惠券信息说明	[{“amount”:“0.20”,“merchantContribute”:“0.00”,“name”:“一键创建券模板的券名称”,“otherContribute”:“0.20”,“type”:“ALIPAY_DISCOUNT_VOUCHER”,“memo”:“学生卡8折优惠”] 
      */
     private String voucher_detail_list;
 
     /**
-     * 	回传参数	String(512)	否	公共回传参数，如果请求时传递了该参数，则返回给商户时会在异步通知时将该参数原样返回。本参数必须进行UrlEncode之后才可以发送给支付宝	merchantBizType%3d3C%26merchantBizNo%3d2016010101111 
+     * 回传参数	String(512)	否	公共回传参数，如果请求时传递了该参数，则返回给商户时会在异步通知时将该参数原样返回。本参数必须进行UrlEncode之后才可以发送给支付宝	merchantBizType%3d3C%26merchantBizNo%3d2016010101111 
      */
     private String passback_params;
 

@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 public class AlipayConfig {
 
     /**
-     *  应用ID,您的APPID，收款账号既是您的APPID对应支付宝账号
+     * 应用ID,您的APPID，收款账号既是您的APPID对应支付宝账号
      */
     @Value("${alipay.appId}")
     private String appId;
@@ -27,7 +27,7 @@ public class AlipayConfig {
      * 商户私钥，您的PKCS8格式RSA2私钥
      */
     @Value("${alipay.privateKey}")
-    private  String privateKey;
+    private String privateKey;
 
     /**
      * 支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。

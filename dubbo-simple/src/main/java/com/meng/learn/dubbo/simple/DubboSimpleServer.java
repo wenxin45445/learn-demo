@@ -12,14 +12,15 @@ import java.io.IOException;
 public class DubboSimpleServer {
     public static void main(String[] args) throws IOException {
         new DubboSimpleServer().openServer(12345);
-        for (;;){
+        for (; ; ) {
             int read = System.in.read();
-            if (read == 0){
+            if (read == 0) {
                 System.exit(0);
             }
         }
     }
-    public void openServer(int port){
+
+    public void openServer(int port) {
         ApplicationConfig config = new ApplicationConfig();
         config.setName("simple-app");
         ProtocolConfig protocolConfig = new ProtocolConfig();

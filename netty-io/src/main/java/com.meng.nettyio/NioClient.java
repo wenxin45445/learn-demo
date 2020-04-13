@@ -19,22 +19,22 @@ public class NioClient {
     }
 
     private void waitForChannel() throws IOException {
-        for (;;){
+        for (; ; ) {
             this.selector.select();
             Iterator<SelectionKey> iterator = this.selector.selectedKeys().iterator();
-            while (iterator.hasNext()){
+            while (iterator.hasNext()) {
                 SelectionKey next = iterator.next();
                 iterator.remove();
-                if (next.isConnectable()){
+                if (next.isConnectable()) {
                     SocketChannel sc = (SocketChannel) next.channel();
-                    if (sc.isConnectionPending()){
+                    if (sc.isConnectionPending()) {
                         sc.finishConnect();
                     }
                     sc.configureBlocking(false);
                     ByteBuffer bb = ByteBuffer.wrap("hello server".getBytes());
                     sc.write(bb);
                     sc.register(this.selector, SelectionKey.OP_READ);
-                } else if (next.isReadable()){
+                } else if (next.isReadable()) {
                     read(next);
                 }
             }
@@ -46,7 +46,7 @@ public class NioClient {
         ByteBuffer bb = ByteBuffer.allocate(1024);
         int len = sc.read(bb);
         if (len != -1) {
-            System.out.println("客户端收到服务端消息："  + new String(bb.array(), 0, len));
+            System.out.println("客户端收到服务端消息：" + new String(bb.array(), 0, len));
         }
     }
 

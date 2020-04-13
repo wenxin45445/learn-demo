@@ -1,14 +1,8 @@
-
-### maven #####
-*/target/
-!.mvn/wrapper/maven-wrapper.jar
+HELP.md
+target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
-.mvn/
-/*/target/*.class
-/logs/
-/bin/
 
 ### STS ###
 .apt_generated
@@ -24,41 +18,14 @@
 *.iws
 *.iml
 *.ipr
-/log.path*/
-admin/log.path*/
-*.DS_Store
 
 ### NetBeans ###
 /nbproject/private/
-/build/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
+build/
 
-*/bin/*
-/target
-*/target/*
-/target/*
-*/logs/*
-*/log/*
-*/build
-lib/*
-*.class
-
-/.idea
-*/.settings/*
-*/.myeclipse/*
-*/*.classpath
-*/*.project
-*/*.mymetadata
-*/*.myumldata
-*.classpath
-*.project
-*/*jar-with-dependencies.jar
-/.metadata
-/.recommenders
-/.gradle
-/.settings
-/*.gradle~
-*.ser
+### VS Code ###
+.vscode/

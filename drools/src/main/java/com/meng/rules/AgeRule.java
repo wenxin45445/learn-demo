@@ -10,6 +10,7 @@ public class AgeRule {
     private static KieContainer container;
     private static User user;
     private static KieSession session;
+
     public static void main(String[] args) {
         KieServices kieServices = KieServices.Factory.get();
         container = kieServices.getKieClasspathContainer();

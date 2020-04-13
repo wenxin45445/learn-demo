@@ -22,12 +22,12 @@ public class NioServer {
 
         Selector selector = Selector.open();
         ssc.register(selector, SelectionKey.OP_ACCEPT);
-        for (;;){
+        for (; ; ) {
             System.out.println("等待事件发生。。。。。");
             selector.select();
             System.out.println("有事件发生。。。。");
             Iterator<SelectionKey> iterator = selector.selectedKeys().iterator();
-            while(iterator.hasNext()){
+            while (iterator.hasNext()) {
                 SelectionKey next = iterator.next();
                 iterator.remove();
                 handle(next);
@@ -36,13 +36,13 @@ public class NioServer {
     }
 
     private void handle(SelectionKey next) throws IOException {
-        if (next.isAcceptable()){
+        if (next.isAcceptable()) {
             System.out.println("有客户端连接。。。。。");
             ServerSocketChannel ssc = (ServerSocketChannel) next.channel();
             SocketChannel sc = ssc.accept();
             sc.configureBlocking(false);
             sc.register(next.selector(), SelectionKey.OP_READ);
-        }else if (next.isReadable()){
+        } else if (next.isReadable()) {
             System.out.println("有客户端可读事件发生。。。");
             SocketChannel sc = (SocketChannel) next.channel();
             ByteBuffer bb = ByteBuffer.allocate(1024);
@@ -51,7 +51,7 @@ public class NioServer {
             if (len != -1) {
                 System.out.println("读取到客户端发送信息：" + new String(bb.array(), 0, len));
             }
-            ByteBuffer bbWrite  = ByteBuffer.wrap("hello client".getBytes());
+            ByteBuffer bbWrite = ByteBuffer.wrap("hello client".getBytes());
             sc.write(bbWrite);
             next.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
             sc.close();

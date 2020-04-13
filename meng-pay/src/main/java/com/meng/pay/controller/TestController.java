@@ -22,9 +22,9 @@ public class TestController {
      *
      */
     @PostMapping("/test/sb")
-    public String test(User user){
+    public String test(User user) {
         String result = "";
-        if (user != null){
+        if (user != null) {
             result = user.toString();
         }
         return result;

@@ -26,15 +26,16 @@ public class AlipayController {
 
     /**
      * 付款
+     *
      * @param WIDout_trade_no 商户订单号，商户网站订单系统中唯一订单号，必填
      * @param WIDtotal_amount 付款金额，必填
-     * @param WIDsubject 订单名称，必填
-     * @param WIDbody 商品描述，可空
-     * @return  交易结果
+     * @param WIDsubject      订单名称，必填
+     * @param WIDbody         商品描述，可空
+     * @return 交易结果
      */
     @PostMapping("/pay")
     public String pay(@RequestParam String WIDout_trade_no, @RequestParam String WIDtotal_amount,
-                    @RequestParam String WIDsubject, @RequestParam String WIDbody){
+                      @RequestParam String WIDsubject, @RequestParam String WIDbody) {
 
         logger.info("[pay] pay start.......");
         //获得初始化的AlipayClient
@@ -45,10 +46,10 @@ public class AlipayController {
         alipayRequest.setReturnUrl(alipayConfig.getReturnUrl());
         alipayRequest.setNotifyUrl(alipayConfig.getNotifyUrl());
 
-        alipayRequest.setBizContent("{\"out_trade_no\":\""+ WIDout_trade_no +"\","
-                + "\"total_amount\":\""+ WIDtotal_amount +"\","
-                + "\"subject\":\""+ WIDsubject +"\","
-                + "\"body\":\""+ WIDbody +"\","
+        alipayRequest.setBizContent("{\"out_trade_no\":\"" + WIDout_trade_no + "\","
+                + "\"total_amount\":\"" + WIDtotal_amount + "\","
+                + "\"subject\":\"" + WIDsubject + "\","
+                + "\"body\":\"" + WIDbody + "\","
                 + "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");
 
         //若想给BizContent增加其他可选请求参数，以增加自定义超时时间参数timeout_express来举例说明
@@ -70,25 +71,26 @@ public class AlipayController {
 
         //输出
         logger.info("[pay] 用户支付流程完成，支付结果：{}", result);
-        return  result;
+        return result;
     }
 
     /**
-     *  交易查询
+     * 交易查询
+     *
      * @param WIDTQout_trade_no 商户订单号，商户网站订单系统中唯一订单号
-     * @param WIDTQtrade_no 支付宝交易号
+     * @param WIDTQtrade_no     支付宝交易号
      * @return 交易结果
      */
     @RequestMapping("/query")
-    public String query(@RequestParam String WIDTQout_trade_no, @RequestParam String WIDTQtrade_no){
+    public String query(@RequestParam String WIDTQout_trade_no, @RequestParam String WIDTQtrade_no) {
         //获得初始化的AlipayClient
         AlipayClient alipayClient = new DefaultAlipayClient(alipayConfig.getGatewayUrl(), alipayConfig.getAppId(), alipayConfig.getPrivateKey(), "json", alipayConfig.getCharset(), alipayConfig.getPublicKey(), alipayConfig.getSignType());
 
         //设置请求参数
         AlipayTradeQueryRequest alipayRequest = new AlipayTradeQueryRequest();
 
-       //请二选一设置
-        alipayRequest.setBizContent("{\"out_trade_no\":\""+ WIDTQout_trade_no +"\","+"\"trade_no\":\""+ WIDTQtrade_no +"\"}");
+        //请二选一设置
+        alipayRequest.setBizContent("{\"out_trade_no\":\"" + WIDTQout_trade_no + "\"," + "\"trade_no\":\"" + WIDTQtrade_no + "\"}");
 
         //请求
         String result = null;
@@ -100,32 +102,33 @@ public class AlipayController {
 
         //输出
         logger.info("[query] 交易查询流程完成，交易查询结果：{}", result);
-        return  result;
+        return result;
     }
 
     /**
      * 退款
-     * @param WIDTRout_trade_no 商户订单号，商户网站订单系统中唯一订单号
-     * @param WIDTRtrade_no 支付宝交易号
-     * @param WIDTRrefund_amount 需要退款的金额，该金额不能大于订单金额，必填
-     * @param WIDTRrefund_reason 退款的原因说明
+     *
+     * @param WIDTRout_trade_no   商户订单号，商户网站订单系统中唯一订单号
+     * @param WIDTRtrade_no       支付宝交易号
+     * @param WIDTRrefund_amount  需要退款的金额，该金额不能大于订单金额，必填
+     * @param WIDTRrefund_reason  退款的原因说明
      * @param WIDTRout_request_no 标识一次退款请求，同一笔交易多次退款需要保证唯一，如需部分退款，则此参数必传
      * @return 交易结果
      */
     @RequestMapping("/refund")
     public String refund(@RequestParam String WIDTRout_trade_no, @RequestParam String WIDTRtrade_no, @RequestParam String WIDTRrefund_amount,
-                         @RequestParam String WIDTRrefund_reason, @RequestParam String WIDTRout_request_no){
+                         @RequestParam String WIDTRrefund_reason, @RequestParam String WIDTRout_request_no) {
         //获得初始化的AlipayClient
         AlipayClient alipayClient = new DefaultAlipayClient(alipayConfig.getGatewayUrl(), alipayConfig.getAppId(), alipayConfig.getPrivateKey(), "json", alipayConfig.getCharset(), alipayConfig.getPublicKey(), alipayConfig.getSignType());
 
         //设置请求参数
         AlipayTradeRefundRequest alipayRequest = new AlipayTradeRefundRequest();
 
-        alipayRequest.setBizContent("{\"out_trade_no\":\""+ WIDTRout_trade_no +"\","
-                + "\"trade_no\":\""+ WIDTRtrade_no +"\","
-                + "\"refund_amount\":\""+ WIDTRrefund_amount +"\","
-                + "\"refund_reason\":\""+ WIDTRrefund_reason +"\","
-                + "\"out_request_no\":\""+ WIDTRout_request_no +"\"}");
+        alipayRequest.setBizContent("{\"out_trade_no\":\"" + WIDTRout_trade_no + "\","
+                + "\"trade_no\":\"" + WIDTRtrade_no + "\","
+                + "\"refund_amount\":\"" + WIDTRrefund_amount + "\","
+                + "\"refund_reason\":\"" + WIDTRrefund_reason + "\","
+                + "\"out_request_no\":\"" + WIDTRout_request_no + "\"}");
 
         //请求
         String result = null;
@@ -137,27 +140,28 @@ public class AlipayController {
 
         //输出
         logger.info("[refund] 退款流程完成，退款结果：{}", result);
-        return  result;
+        return result;
     }
 
     /**
      * 退款查询
-     * @param WIDRQout_trade_no 商户订单号，商户网站订单系统中唯一订单号
-     * @param WIDRQtrade_no 支付宝交易号
+     *
+     * @param WIDRQout_trade_no   商户订单号，商户网站订单系统中唯一订单号
+     * @param WIDRQtrade_no       支付宝交易号
      * @param WIDRQout_request_no 请求退款接口时，传入的退款请求号，如果在退款请求时未传入，则该值为创建交易时的外部交易号，必填
      * @return 交易结果
      */
     @RequestMapping("/refund/query")
-    public String refundQuery(@RequestParam String WIDRQout_trade_no, @RequestParam String WIDRQtrade_no, @RequestParam String WIDRQout_request_no){
+    public String refundQuery(@RequestParam String WIDRQout_trade_no, @RequestParam String WIDRQtrade_no, @RequestParam String WIDRQout_request_no) {
         //获得初始化的AlipayClient
         AlipayClient alipayClient = new DefaultAlipayClient(alipayConfig.getGatewayUrl(), alipayConfig.getAppId(), alipayConfig.getPrivateKey(), "json", alipayConfig.getCharset(), alipayConfig.getPublicKey(), alipayConfig.getSignType());
 
         //设置请求参数
         AlipayTradeFastpayRefundQueryRequest alipayRequest = new AlipayTradeFastpayRefundQueryRequest();
 
-        alipayRequest.setBizContent("{\"out_trade_no\":\""+ WIDRQout_trade_no +"\","
-                +"\"trade_no\":\""+ WIDRQtrade_no +"\","
-                +"\"out_request_no\":\""+ WIDRQout_request_no +"\"}");
+        alipayRequest.setBizContent("{\"out_trade_no\":\"" + WIDRQout_trade_no + "\","
+                + "\"trade_no\":\"" + WIDRQtrade_no + "\","
+                + "\"out_request_no\":\"" + WIDRQout_request_no + "\"}");
 
         //请求
         String result = null;
@@ -169,17 +173,18 @@ public class AlipayController {
 
         //输出
         logger.info("[refundQuery] 退款查询流程完成，退款查询结果：{}", result);
-        return  result;
+        return result;
     }
 
     /**
      * 交易关闭
+     *
      * @param WIDTCout_trade_no 商户订单号，商户网站订单系统中唯一订单号
-     * @param WIDTCtrade_no 支付宝交易号
+     * @param WIDTCtrade_no     支付宝交易号
      * @return 交易结果
      */
     @RequestMapping("/close")
-    public String close(@RequestParam String WIDTCout_trade_no, @RequestParam String WIDTCtrade_no){
+    public String close(@RequestParam String WIDTCout_trade_no, @RequestParam String WIDTCtrade_no) {
         //获得初始化的AlipayClient
         AlipayClient alipayClient = new DefaultAlipayClient(alipayConfig.getGatewayUrl(), alipayConfig.getAppId(), alipayConfig.getPrivateKey(), "json", alipayConfig.getCharset(), alipayConfig.getPublicKey(), alipayConfig.getSignType());
 
@@ -187,7 +192,7 @@ public class AlipayController {
         AlipayTradeCloseRequest alipayRequest = new AlipayTradeCloseRequest();
 
         //请二选一设置
-        alipayRequest.setBizContent("{\"out_trade_no\":\""+ WIDTCout_trade_no +"\"," +"\"trade_no\":\""+ WIDTCtrade_no +"\"}");
+        alipayRequest.setBizContent("{\"out_trade_no\":\"" + WIDTCout_trade_no + "\"," + "\"trade_no\":\"" + WIDTCtrade_no + "\"}");
 
         //请求
         String result = null;
@@ -199,11 +204,11 @@ public class AlipayController {
 
         //输出
         logger.info("[close] 交易关闭流程完成，交易关闭结果：{}", result);
-        return  result;
+        return result;
     }
 
     @RequestMapping("/payNotify")
-    public String payNotify(AlipayNotifyEntity notifyEntity){
+    public String payNotify(AlipayNotifyEntity notifyEntity) {
         String result = AlipayStatusEnum.TRADE_FINISHED.getStatusMsg();
         //输出
         logger.info("[payNotify] 通知请求流程完成，交易关闭结果：{}", result);
@@ -213,7 +218,7 @@ public class AlipayController {
 
 
     @RequestMapping("/payReturn")
-    public String payReturn(AlipayNotifyEntity notifyEntity){
+    public String payReturn(AlipayNotifyEntity notifyEntity) {
         String result = AlipayStatusEnum.TRADE_FINISHED.getStatusMsg();
         //输出
         logger.info("[payReturn]回调流程完成，交易关闭结果：{}", result);

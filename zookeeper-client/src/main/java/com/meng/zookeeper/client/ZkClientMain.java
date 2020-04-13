@@ -32,12 +32,13 @@ public class ZkClientMain {
 
     /**
      * 初始化连接
+     *
      * @throws IOException
      */
     public void init() throws IOException {
 
 //        zkClient = new ZkClient("169.254.97.213:2181", 500000, 500000);
-        zooKeeper = new ZooKeeper("169.254.97.213:2181", 500000, new Watcher(){
+        zooKeeper = new ZooKeeper("169.254.97.213:2181", 500000, new Watcher() {
             @Override
             public void process(WatchedEvent watchedEvent) {
                 logger.info(watchedEvent.getPath());
@@ -53,6 +54,7 @@ public class ZkClientMain {
 
     /**
      * 操作测试
+     *
      * @throws KeeperException
      * @throws InterruptedException
      */
@@ -69,10 +71,12 @@ public class ZkClientMain {
 
         // 打印节点状态
         Stat exists = zooKeeper.exists("/simple", false);
-        logger.info(exists.toString());System.out.println(exists);
+        logger.info(exists.toString());
+        System.out.println(exists);
 
         // 给永久节点添加一个监听器
-        Watcher watcher = watchedEvent -> {System.out.println(watchedEvent.getPath());
+        Watcher watcher = watchedEvent -> {
+            System.out.println(watchedEvent.getPath());
             System.out.println("aaa");
         };
         zooKeeper.exists("/simple", watcher);
@@ -110,7 +114,7 @@ public class ZkClientMain {
 
         // 设置临时节点的访问权限问指定的用户
         // meng WdhJJ9lLRh7rt3T1Ji2cIzzUFI0=
-        zooKeeper.addAuthInfo("digest","meng:mengpp".getBytes());
+        zooKeeper.addAuthInfo("digest", "meng:mengpp".getBytes());
         acls.clear();
         acls.add(new ACL(perm, new Id("auth", "meng")));
         Stat statAclA = zooKeeper.setACL("/simple/ephemeral", acls, 1);
@@ -138,8 +142,7 @@ public class ZkClientMain {
     }
 
 
-
-    public void initTest(){
+    public void initTest() {
         // centos.desk
         // 169.254.97.213
 
@@ -152,7 +155,7 @@ public class ZkClientMain {
         zkClient = new ZkClient("169.254.97.213", 5000, 10000);
     }
 
-    public void initZkClient(String addr, int sessionTimeOut, int connectionTimeOut){
+    public void initZkClient(String addr, int sessionTimeOut, int connectionTimeOut) {
         zkClient = new ZkClient(addr, sessionTimeOut, connectionTimeOut);
     }
 }

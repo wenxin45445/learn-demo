@@ -14,7 +14,7 @@ spring:
     static-path-pattern: /static/**
     view:
       prefix: /static/pages/
-#      prefix: /templates/
+      #      prefix: /templates/
       suffix: .html
   resources:
     static-locations: classpath:/static/
@@ -47,7 +47,7 @@ alipay:
   # 支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。
   publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi0ptQlmS/mR40cySoZA+8vGEJr+coC23Z5YdwUqiwHXw4n/XNWWILk9gex7eDk4+K/BS9P2nKdXxGKn+2iWsp4Dk+Lcy0Z3UklhOZYNeVf+N+bBY8XNcnpUrR7PYGZ6vmR0W8PbVMio0jlDXRsar8ie6bKjFBgLL9IR+jlw3vEHuMpDg4WkunIvT4lK+GCZugFQLFesTfx6nd0A6pFRicYWb7xizIVFtE7N0uceOQjvca93jf29nPIpZC9054mDoa/ND7gRhgZm4QkVY14wsJIOt1tdyMt/4lkuPAurSmZTgftU5zlpugZOR4KMrr/CmNfPcF0GZOeYjX64Rf6BaJwIDAQAB
   # 应用ID,您的APPID，收款账号既是您的APPID对应支付宝账号
-#  appId: 2088102180516318
+  #  appId: 2088102180516318
   appId: 2016102100732022
   #
   charset: UTF-8

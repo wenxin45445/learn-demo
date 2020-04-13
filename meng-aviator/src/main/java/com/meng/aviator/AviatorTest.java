@@ -13,10 +13,10 @@ import java.util.*;
 
 public class AviatorTest {
     public static void main(String[] args) {
-        String age  = "18";
+        String age = "18";
         System.out.println(AviatorEvaluator.exec("'his age is ' + age + '!'", age));
 
-        Map<String, Object> map  = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         map.put("age", "18");
         System.out.println(AviatorEvaluator.execute("'his age is ' + age + '!'", map));
 
@@ -43,7 +43,7 @@ public class AviatorTest {
         Boolean result = (Boolean) compiledExp.execute(map);
         System.out.println(result);
 
-        List<String> list  = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         list.add("hello");
         list.add(" world");
 
@@ -70,7 +70,7 @@ public class AviatorTest {
         map.put("email", email);
         System.out.println(AviatorEvaluator.execute("email = ~/([\\w0-8]+)@\\w+[\\.\\w+]+/ ? $1 : 'unknow'", map));
 
-        User user = new User(1,"meng", 22);
+        User user = new User(1, "meng", 22);
         map.clear();
         map.put("user", user);
         System.out.println(AviatorEvaluator.execute(" '[user id=' + user.id + ',name=' + user.name + ',age=' + user.age + ']' ", map));
@@ -98,13 +98,13 @@ public class AviatorTest {
     }
 
 
-    static class MultiplyFunction extends AbstractFunction{
+    static class MultiplyFunction extends AbstractFunction {
 
         @Override
         public AviatorObject call(Map<String, Object> env, AviatorObject par1, AviatorObject par2) {
             double num1 = FunctionUtils.getNumberValue(par1, env).doubleValue();
             double num2 = FunctionUtils.getNumberValue(par2, env).doubleValue();
-            return  new AviatorDouble(num1 * num2);
+            return new AviatorDouble(num1 * num2);
         }
 
         @Override
