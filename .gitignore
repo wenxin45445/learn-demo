@@ -8,6 +8,9 @@ target/
 **/*.iml
 **/mvnw
 **/mvnw.cmd
+.mvn
+
+logs
 
 ### STS ###
 .apt_generated
@@ -34,5 +37,4 @@ build/
 
 ### VS Code ###
 .vscode/
-.mvn
-logs
+
