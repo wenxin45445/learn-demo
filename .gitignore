@@ -10,7 +10,6 @@ target/
 **/mvnw.cmd
 .mvn
 
-logs
 
 ### STS ###
 .apt_generated
@@ -38,3 +37,8 @@ build/
 ### VS Code ###
 .vscode/
 
+
+### custom ###
+logs
+game-server-nodejs/node_modules
+game-client/node_modules

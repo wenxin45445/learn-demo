@@ -1,0 +1,13 @@
+public/
+node_modules/
+
+/build/
+/config/
+/dist/
+/*.js
+/README.md
+/package-lock.json
+/package.json
+/yarn.lock
+/node_modules
+*.html
