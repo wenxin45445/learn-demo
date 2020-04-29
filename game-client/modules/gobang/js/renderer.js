@@ -1,9 +1,16 @@
-const EStoneColor = {
+/** 棋盘绘制脚本 * */
+
+/**
+ * 棋子颜色
+ * @type {{white: number, black: number, error: undefined, empty: number}}
+ */
+const ChessPieceColor = {
   empty: 0,
   black: -1,
   white: 1,
   error: undefined,
 };
+
 /** 渲染类，管理canvas绘图 */
 class Renderer {
   constructor(controller, canvasSize = 15 * 30) {
@@ -24,10 +31,10 @@ class Renderer {
     const y = (Math.round(offsetY / gridSize - 0.5) + 0.5) * gridSize;
     this.context.beginPath();
     this.context.arc(x, y, gridSize / 2 - 1, 0, 360, false);
-    if (color === EStoneColor.black) {
+    if (color === ChessPieceColor.black) {
       this.context.fillStyle = '#000000AA';
       this.context.fill();
-    } else if (color === EStoneColor.white) {
+    } else if (color === ChessPieceColor.white) {
       this.context.fillStyle = '#FFFFFFAA';
       this.context.fill();
     }
@@ -94,10 +101,10 @@ class Renderer {
       y = (y + 0.5) * gridSize;
       this.context.beginPath();
       this.context.arc(x, y, gridSize / 2 - 2, 0, 360, false);
-      if (color === EStoneColor.black) {
+      if (color === ChessPieceColor.black) {
         this.context.fillStyle = 'black';
         this.context.fill();
-      } else if (color === EStoneColor.white) {
+      } else if (color === ChessPieceColor.white) {
         this.context.fillStyle = 'white';
         this.context.fill();
       }
@@ -112,9 +119,9 @@ class Renderer {
       } else {
         this.context.font = `${gridSize * 0.6}px Georgia, 'Times new roman'`;
       }
-      if (point.color === EStoneColor.black) {
+      if (point.color === ChessPieceColor.black) {
         this.context.fillStyle = 'white';
-      } else if (point.color === EStoneColor.white) {
+      } else if (point.color === ChessPieceColor.white) {
         this.context.fillStyle = 'black';
       }
       this.context.textBaseline = 'middle';
@@ -134,5 +141,5 @@ class Renderer {
 
 export {
   Renderer,
-  EStoneColor,
+  ChessPieceColor,
 };

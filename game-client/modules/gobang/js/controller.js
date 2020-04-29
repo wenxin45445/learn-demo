@@ -4,7 +4,7 @@ import {
 } from './board';
 import {
   Renderer,
-  EStoneColor,
+  ChessPieceColor,
 } from './renderer';
 
 const EState = {
@@ -242,7 +242,7 @@ class Controller {
       }
       const delayTime = Math.max((new Date()).getTime() - this.lastTime.getTime(), 20);
       this.log(
-        `黑方分数:${Analyser.getScore(this.board, EStoneColor.black)},白方分数:${Analyser.getScore(this.board, EStoneColor.white)}`,
+        `黑方分数:${Analyser.getScore(this.board, ChessPieceColor.black)},白方分数:${Analyser.getScore(this.board, ChessPieceColor.white)}`,
         `AI估值:${best.score}`,
         `AI思考时间:${delayTime / 1000}秒,递归深度:${best.depth}`,
       );
