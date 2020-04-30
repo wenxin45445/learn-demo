@@ -22,6 +22,8 @@ module.exports = {
     "no-continue": 0,
     "no-restricted-globals": 0,
     "no-restricted-syntax": 0,
-    "no-alert": 0
+    "no-alert": 0,
+    'max-len': ['error', { 'code': 200 }],
+    "lines-between-class-members": ["error", "never"],
   }
 };
