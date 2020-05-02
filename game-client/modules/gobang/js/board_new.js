@@ -26,4 +26,22 @@ const RoomModule = {
  */
 class BordData {
   // todo
+  constructor(chessState, roomModule, xLines, yLines) {
+    this.chessState = chessState;
+    this.roomModule = roomModule;
+    this.xLines = xLines;
+    this.yLines = yLines;
+    this.currentTurn = 0;
+  }
+
+  doPlacingPieces(positionX, positionY) {
+    // todo
+    return 0;
+  }
+}
+
+export {
+  BordData,
+  ChessState,
+  RoomModule,
 }

@@ -1,5 +1,5 @@
 {
-  "name": "renju_n",
+  "name": "game-client",
   "version": "1.0.0",
   "description": "一个普通的N子棋项目",
   "main": "index.js",
