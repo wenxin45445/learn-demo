@@ -33,6 +33,19 @@ const NetModule = {
     // 离线
     offLine: 1,
 }
+/**
+ * 对弈状态
+ */
+const PlayState = {
+    // 胜负未明
+    unClear: 0,
+    // 胜利
+    win: 1,
+    // 平局
+    tied: 2,
+    // 失败
+    failed: 3,
+}
 
 /**
  * 棋子颜色
@@ -72,4 +85,5 @@ export {
     ChessPieceColor,
     UserInfo,
     NetModule,
+    PlayState,
 }

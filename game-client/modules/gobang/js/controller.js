@@ -1,5 +1,5 @@
 import {ChessState, RoomModule} from "./goBangEnum";
-import {ChessPieceColor} from "./goBangEnum";
+import {ChessPieceColor, PlayState} from "./goBangEnum";
 
 /**
  * 下棋控制器
@@ -37,9 +37,14 @@ class Controller {
         }
         this.doPlacingPiece(positionX, positionY, pieceColor);
         // 判断胜负，如果胜负已定，通知玩家，结束本局
-        if (this.win(positionX, positionY)) {
+        let judge = this.win(positionX, positionY);
+        if (judge === PlayState.win) {
             this.boardData.chessState = ChessState.end;
             return 100;
+        }        
+        if (judge === PlayState.tied) {
+            this.boardData.chessState = ChessState.end;
+            return 101;
         }
         // todo 如果是跟ai下棋，通知ai行棋
         this.turnPlayer();
@@ -137,7 +142,7 @@ class Controller {
             }
         }
         if (count >= this.boardData.winNum) {
-            return true;
+            return PlayState.win;
         }
 
         // y 方向
@@ -157,7 +162,7 @@ class Controller {
             }
         }
         if (count >= this.boardData.winNum) {
-            return true;
+            return PlayState.win;
         }
 
         // xy45度 方向
@@ -178,7 +183,7 @@ class Controller {
             }
         }
         if (count >= this.boardData.winNum) {
-            return true;
+            return PlayState.win;
         }
 
         // xy135度 方向
@@ -198,7 +203,22 @@ class Controller {
                 break;
             }
         }
-        return count >= this.boardData.winNum;
+        if (count >= this.boardData.winNum) {
+            return PlayState.win;
+        }
+        // 平局
+        count = 0;
+        for (let i = 0; i < this.boardData.xLines; i++) {
+            for (let j = 0; j < this.boardData.xLines; j++) {
+                if (this.boardData.pointers[i][j] === ChessPieceColor.empty) {
+                    count += 1;
+                }
+            }
+        }
+        if (count === 0) {
+            return PlayState.tied;
+        }
+        return PlayState.unClear;
     }
 }
 

@@ -79,6 +79,10 @@ function main() {
         } else if (result === 99) {
             // 成功落子，对应提示动作
             renderer.drawChessPiece(positionX, positionY, renderer.pieceSize, currentTurn);
+        } else if (result === 101) {
+            // 平棋， 提示玩家
+            renderer.drawChessPiece(positionX, positionY, renderer.pieceSize, currentTurn);
+            tip.innerHTML = "<front style='color:red;'>" +  "平棋" + "</front>";
         } else {
             // 落子失败，删除棋子
         }
