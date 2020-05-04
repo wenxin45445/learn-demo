@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   target: 'web',
+  devtool: 'eval-source-map',
   entry: {'babel-polyfill':'./modules/gobang/js/main.js'},
   output: {
     path: path.resolve(__dirname, './dist'),

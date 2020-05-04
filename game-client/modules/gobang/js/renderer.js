@@ -1,145 +1,92 @@
 /** 棋盘绘制脚本 * */
-
-/**
- * 棋子颜色
- * @type {{white: number, black: number, error: undefined, empty: number}}
- */
-const ChessPieceColor = {
-  empty: 0,
-  black: -1,
-  white: 1,
-  error: undefined,
-};
+import {ChessPieceColor} from "./goBangEnum";
 
 /** 渲染类，管理canvas绘图 */
 class Renderer {
-  constructor(controller, canvasSize = 15 * 30) {
-    this.controller = controller;
-    this.canvas = controller.canvas;
-    this.context = controller.canvas.getContext('2d');
-    this.canvas.setAttribute('height', canvasSize);
-    this.canvas.setAttribute('width', canvasSize);
-    this.canvasSize = canvasSize;
-  }
-
-  /** 绘制落子提示 */
-  drawPointer(offsetX, offsetY, gridSize, color) {
-    if (isNaN(offsetX) || isNaN(offsetY)) {
-      return;
-    }
-    const x = (Math.round(offsetX / gridSize - 0.5) + 0.5) * gridSize;
-    const y = (Math.round(offsetY / gridSize - 0.5) + 0.5) * gridSize;
-    this.context.beginPath();
-    this.context.arc(x, y, gridSize / 2 - 1, 0, 360, false);
-    if (color === ChessPieceColor.black) {
-      this.context.fillStyle = '#000000AA';
-      this.context.fill();
-    } else if (color === ChessPieceColor.white) {
-      this.context.fillStyle = '#FFFFFFAA';
-      this.context.fill();
-    }
-    this.context.closePath();
-  }
-
-  /** 更新一帧 */
-  update() {
-    const {
-      board,
-    } = this.controller;
-    const {
-      pointer,
-    } = this.controller;
-    const {
-      stoneList,
-    } = this.controller;
-    const {
-      foulList,
-    } = this.controller;
-    const currentColor = this.controller.playerColor;
-    this.context.clearRect(0, 0, this.canvasSize, this.canvasSize);
-    const gridSize = this.canvasSize / board.size;
-
-    this.context.beginPath();
-    for (let i = 0; i < board.size; i += 1) {
-      this.context.moveTo(i * gridSize + gridSize / 2, gridSize / 2);
-      this.context.lineTo(i * gridSize + gridSize / 2, (board.size - 1) * gridSize + gridSize / 2);
-      this.context.moveTo(gridSize / 2, i * gridSize + gridSize / 2);
-      this.context.lineTo((board.size - 1) * gridSize + gridSize / 2, i * gridSize + gridSize / 2);
-    }
-    this.context.stroke();
-    this.context.closePath();
-
-    this.drawPointer(pointer.x, pointer.y, gridSize, currentColor);
-
-    if (this.controller.foulRule) {
-      foulList.forEach((point) => {
-        const x = (point.x + 0.5) * gridSize;
-        const y = (point.y + 0.5) * gridSize + 1;
-        this.context.font = `${gridSize * 0.8}px Georgia, 'Times new roman'`;
-        this.context.fillStyle = 'darkred';
-        this.context.textBaseline = 'middle';
-        this.context.textAlign = 'center';
-        this.context.fillText('X', x, y);
-      });
-    }
-    const sign = stoneList[stoneList.length - 1];
-    if (sign !== undefined) {
-      this.context.beginPath();
-      this.context.arc((sign.x + 0.5) * gridSize,
-        (sign.y + 0.5) * gridSize, gridSize / 2, 0, 360, false);
-      this.context.fillStyle = 'darkgray';
-      this.context.fill();
-      this.context.closePath();
+    /**
+     * canvas 管理器构造函数
+     * @param canvas 画布
+     * @param chessBorder 棋盘边宽
+     * @param chessHeight 棋盘高度
+     * @param chessWeight 棋盘宽度
+     * @param xLines 棋盘 x线数
+     * @param yLines 棋盘 y线数
+     * @param pieceRatio 棋子大小 相对棋盘间隔的比例
+     */
+    constructor(canvas, chessBorder, chessHeight, chessWeight, xLines, yLines, pieceRatio) {
+        this.canvas = canvas;
+        this.context = this.canvas.getContext('2d');
+        this.chessBorder = chessBorder;
+        this.chessHeight = chessHeight;
+        this.chessWeight = chessWeight;
+        this.xLines = xLines;
+        this.yLines = yLines;
+        this.pieceRatio = pieceRatio;
+        // x线间隔
+        this.spaceX = (chessWeight - chessBorder * 2) / (xLines -1);
+        // y线间隔
+        this.spaceY = (chessHeight - chessBorder * 2) / (yLines - 1);
+        // 棋子大小
+        this.pieceSize = this.spaceX < this.spaceY ? this.spaceX * this.pieceRatio : this.spaceY * this.pieceRatio;
     }
 
-    board.data.forEach((color, index) => {
-      let {
-        x,
-        y,
-      } = board.getXY(index);
-      x = (x + 0.5) * gridSize;
-      y = (y + 0.5) * gridSize;
-      this.context.beginPath();
-      this.context.arc(x, y, gridSize / 2 - 2, 0, 360, false);
-      if (color === ChessPieceColor.black) {
-        this.context.fillStyle = 'black';
+    /**
+     * 绘制棋盘
+     */
+    drawChessBord() {
+        this.canvas.setAttribute('height', this.chessHeight);
+        this.canvas.setAttribute('width', this.chessWeight);
+        this.context.beginPath();
+        this.context.strokeStyle = '#2b2b2b';
+
+        // 垂直方向画xLines根线，相距spaceX px
+        for (let i = 0; i < this.xLines; i += 1) {
+            this.context.moveTo(this.chessBorder + i * this.spaceX, this.chessBorder);
+            this.context.lineTo(this.chessBorder + i * this.spaceX, this.chessWeight - this.chessBorder);
+        }
+        // 水平方向画yLines根线，相距spaceY px
+        for (let i = 0; i < this.yLines; i += 1) {
+            this.context.moveTo(this.chessBorder, this.chessBorder + this.spaceY * i);
+            this.context.lineTo(this.chessWeight - this.chessBorder, this.chessBorder + this.spaceY * i);
+        }
+        this.context.stroke();
+        this.context.closePath();
+    }
+
+    /**
+     * 绘制棋子
+     * @param positionX x坐标
+     * @param positionY y坐标
+     * @param pieceSize 棋子大小
+     * @param pieceColor 棋子颜色 0：白子 1：黑子
+     */
+    drawChessPiece(positionX, positionY, pieceSize, pieceColor) {
+        this.context.beginPath();
+        // 绘制棋子
+        this.context.arc(this.chessBorder + positionX * this.spaceX, this.chessBorder + positionY * this.spaceY, this.pieceSize, 0, 2 * Math.PI);
+        // 设置渐变
+        const morphing = this.context.createRadialGradient(this.chessBorder + positionX * this.spaceX,
+            this.chessBorder + positionY * this.spaceY, this.pieceSize,
+            this.chessBorder + positionX * this.spaceX,
+            this.chessBorder + positionY * this.spaceY,
+            0);
+        if (pieceColor === ChessPieceColor.black) {
+            // 黑棋
+            morphing.addColorStop(0, '#0A0A0A');
+            morphing.addColorStop(1, '#636766');
+        } else if (pieceColor === ChessPieceColor.white) {
+            // 白棋
+            morphing.addColorStop(0, '#D1D1D1');
+            morphing.addColorStop(1, '#F9F9F9');
+        } else {
+            alert('no this color');
+        }
+        this.context.fillStyle = morphing;
         this.context.fill();
-      } else if (color === ChessPieceColor.white) {
-        this.context.fillStyle = 'white';
-        this.context.fill();
-      }
-      this.context.closePath();
-    });
-
-    stoneList.forEach((point, index) => {
-      const x = (point.x + 0.5) * gridSize;
-      const y = (point.y + 0.5) * gridSize;
-      if (index > 8) { // index+1>=10
-        this.context.font = `${gridSize * 0.55}px Georgia, 'Times new roman'`;
-      } else {
-        this.context.font = `${gridSize * 0.6}px Georgia, 'Times new roman'`;
-      }
-      if (point.color === ChessPieceColor.black) {
-        this.context.fillStyle = 'white';
-      } else if (point.color === ChessPieceColor.white) {
-        this.context.fillStyle = 'black';
-      }
-      this.context.textBaseline = 'middle';
-      this.context.textAlign = 'center';
-      this.context.fillText(index + 1, x, y);
-    });
-  }
-
-  /** GameLoop */
-  updataLoop(fps = 60) {
-    setTimeout(() => {
-      this.update();
-      this.updataLoop(fps);
-    }, fps / 1000);
-  }
+        this.context.closePath();
+    }
 }
 
 export {
-  Renderer,
-  ChessPieceColor,
+    Renderer,
 };
