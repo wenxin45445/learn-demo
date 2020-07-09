@@ -1,8 +1,8 @@
 package com.meng.learn.shardingsphere;
 
-import com.cpic.gibms.mgt.constants.BaseDataConstants;
-import com.cpic.gibms.mgt.constants.BaseEnum;
-import lombok.extern.slf4j.Slf4j;
+
+import com.meng.learn.shardingsphere.constants.BaseDataConstants;
+import com.meng.learn.shardingsphere.constants.BaseEnum;
 import org.apache.shardingsphere.api.sharding.standard.PreciseShardingAlgorithm;
 import org.apache.shardingsphere.api.sharding.standard.PreciseShardingValue;
 
@@ -11,8 +11,7 @@ import java.util.Collection;
 /**
  * 分表策略
  */
-@Slf4j
-public class GibmsTablePreciseShardingAlgorithm implements PreciseShardingAlgorithm<String> {
+public class CalculateTablePreciseShardingAlgorithm implements PreciseShardingAlgorithm<String> {
 
     /**
      * 分表实现
@@ -23,13 +22,9 @@ public class GibmsTablePreciseShardingAlgorithm implements PreciseShardingAlgori
         if (suffix == null) {
             return null;
         }
-
-        String suffixStr = BaseDataConstants.UNDERLINE + suffix;
-        log.info("---------------------------------------------------:" + suffixStr + "------------------" + preciseShardingValue.getValue());
-        for (String name : collection) {
-            if (name.endsWith(suffixStr)) {
-                return name;
-            }
+        String suffixStr = BaseDataConstants.SHARDING_TABLE_CALCULATE_UNDERLINE + suffix;
+        if (collection.contains(suffixStr)) {
+            return suffixStr;
         }
         return null;
     }
