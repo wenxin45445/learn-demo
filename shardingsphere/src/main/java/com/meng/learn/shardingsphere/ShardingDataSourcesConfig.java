@@ -32,29 +32,18 @@ import java.util.Properties;
 public class ShardingDataSourcesConfig {
 
 
-    @Bean(name = "db")
-    @ConfigurationProperties(prefix = "spring.datasource.db")
+    @Bean(name = "sharding-db")
+    @ConfigurationProperties(prefix = "spring.datasource.sharding-db")
     DruidDataSource db() {
         return DruidDataSourceBuilder.create().build();
     }
 
-    @Bean(name = "db2")
-    @ConfigurationProperties(prefix = "spring.datasource.db2")
+    @Bean(name = "sharding-db2")
+    @ConfigurationProperties(prefix = "spring.datasource.sharding-db2")
     DruidDataSource db2() {
         return DruidDataSourceBuilder.create().build();
     }
 
-    @Bean(name = "db3")
-    @ConfigurationProperties(prefix = "spring.datasource.db3")
-    DruidDataSource db3() {
-        return DruidDataSourceBuilder.create().build();
-    }
-
-    @Bean(name = "db4")
-    @ConfigurationProperties(prefix = "spring.datasource.db4")
-    DruidDataSource db4() {
-        return DruidDataSourceBuilder.create().build();
-    }
 
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertyConfigure() {
@@ -68,8 +57,6 @@ public class ShardingDataSourcesConfig {
         Map<String, DataSource> dataSourceMap = new HashMap<>();
         dataSourceMap.put(BaseDataConstants.DB_NAME_DEFAULT, db());
         dataSourceMap.put(BaseDataConstants.DB_NAME_SECOND, db2());
-        dataSourceMap.put(BaseDataConstants.DB_NAME_THREE, db3());
-        dataSourceMap.put(BaseDataConstants.DB_NAME_FOUR, db4());
 
         // shardingRuleConfig
         ShardingRuleConfiguration shardingRuleConfig = new ShardingRuleConfiguration();
@@ -87,8 +74,7 @@ public class ShardingDataSourcesConfig {
         Properties props = new Properties();
         props.put("sql.show ", true);
 
-        DataSource dataSource = ShardingDataSourceFactory.createDataSource(dataSourceMap, shardingRuleConfig, props);
-        return dataSource;
+        return ShardingDataSourceFactory.createDataSource(dataSourceMap, shardingRuleConfig, props);
     }
 
     @Bean
