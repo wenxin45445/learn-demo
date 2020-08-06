@@ -26,13 +26,14 @@ function main() {
     // 棋盘宽度
     const chessWeight = 450;
     // 棋盘 x线数
-    const xLines = 14;
+    const xLines = 15;
     // 棋盘 y线数
-    const yLines = 14;
+    const yLines = 15;
     // 棋子大小 相对棋盘间隔的比例
     const pieceRatio = 0.4;
     const renderer = new Renderer(canvas, chessBorder, chessHeight, chessWeight, xLines, yLines, pieceRatio);
-    const boardData = new BordData(ChessState.init, RoomModule.self, xLines, yLines, 5, ChessPieceColor.black, NetModule.offLine);
+    // const boardData = new BordData(ChessState.init, RoomModule.self, xLines, yLines, 5, ChessPieceColor.black, NetModule.offLine);
+    const boardData = new BordData(ChessState.init, RoomModule.ai, xLines, yLines, 5, ChessPieceColor.black, NetModule.offLine);
     // 在线的时候，在这里把开局信息传给服务器
     const controller = new Controller(boardData, new UserInfo(1, ChessPieceColor.black));
     controller.startGame();

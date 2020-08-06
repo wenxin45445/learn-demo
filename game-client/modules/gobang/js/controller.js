@@ -19,15 +19,15 @@ class Controller {
      */
     placingPiece(positionX, positionY) {
         console.log("positionX: " + positionX + ", positionY: " + positionY)
-        if (this.boardData.chessState != ChessState.start) {
+        if (this.boardData.chessState !== ChessState.start) {
             return this.boardData.chessState;
         }
         // 当前不该你下棋，并且不是自对弈模式
-        if (this.boardData.currentTurn != this.userInfo.holderColor && this.boardData.roomModule != RoomModule.self) {
+        if (this.boardData.currentTurn !== this.userInfo.holderColor && this.boardData.roomModule !== RoomModule.self) {
             return this.boardData.currentTurn;
         }
         let positionXY = this.boardData.pointers[positionX][positionY];
-        if (positionXY != ChessPieceColor.empty) {
+        if (positionXY !== ChessPieceColor.empty) {
             return positionXY;
         }
 
@@ -46,7 +46,10 @@ class Controller {
             this.boardData.chessState = ChessState.end;
             return 101;
         }
-        // todo 如果是跟ai下棋，通知ai行棋
+        // 如果是跟ai下棋，通知ai行棋
+        if (this.boardData.roomModule === RoomModule.ai) {
+
+        }
         this.turnPlayer();
         return 99;
     }
