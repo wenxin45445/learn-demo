@@ -1,1 +1,64 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: meng-pay
+  freemarker:
+    charset: UTF-8
+    request-context-attribute: request
+    settings:
+      number_format: 0.##########
+    suffix: .ftl
+    templateLoaderPath: classpath:/templates/
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /static/pages/
+      #      prefix: /templates/
+      suffix: .html
+  resources:
+    static-locations: classpath:/static/
+#    static-locations: classpath:/templates/
 
+#alipay:
+#  # 商户私钥，您的PKCS8格式RSA2私钥
+#  privateKey: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDNBRwzujil+C1pxKFqCYFoTU5EVe+Uv3m4MHijY47e6NfKbhFHM0IAMqYES0Lg7lspX/ETDlval7KvWnkZ9H7BuUNOU2LN7Jb+o15sKA83aRkmEFZLVf9tvqLnY6904oxlvlHk4VLa37NikK0vPZM2mwonECHfGwGga2GcNRd3Oc9/cyglMfLt50Ld4qCqH9mzgL3DtoPADPV737nRvx7UTCHBgXsEMNgwWzTAl0nMOgTzEqSGhQthvY2F3O/WHqlYgskRXALJ4tHNFeAs81YNto0l5e+pikOjt+RpnFPmAyVvE8X3bDSPQQGrBFBcAJMkxNx+ZBcPI3rzs2nuxCefAgMBAAECggEAL+D2ohnmKtRXfrDd5U6M+xe6pHjRN5Kz0VD4i2evsNz9sBeeT1toGXW6kZwl5TOk9HekbAfZaaYto4fkaixQAdvLHRqaI28SICt03JtKWm1f4yTDklpmCXIQxyrfidNyaDxXEbWRTO4bDXSuDS87FvCEIXVCA8Fh0t3g8MLxVPUuq0vQYte261irvT8FhHfcsxvTeHvA0qViVXAUnTxLI3wBUaY88nQylPxxTX+oeS5orMJGjxsoDDtJzm3WckP2BtkkFt33ZTgbZh5KJ9V8lyVm6CQ2uJGWI76taSsY22+SAuTKaQm0/5j/in5zFpXBS8GNpkKkAA+Sj7sRUyLsmQKBgQD+PjH9C6yociCOE81aKG1CiVw72Qt/YpbEgOuGpJtWgLjo7wJEMEBmYL4yOOGg73rHMv0QVi7ttem9ci9Pb2oKvXsWTr0j4YfFUtstN0hFXSzKZxkz79zzaaEFU2nysQhShP+4KexrPC3+dbWdRlDYyHsnY9ryGq7MC6kY7cC5SwKBgQDOb9R3vxynUJye6ZVN8RcUsqw3lCNGoQiVIAvmi/KMzOPyl9xr2zI2epM4Ut79zW1vG4vDb1mgO3Pm7hl/jGrIm/J9c9qyftpT2I46F2ljvjzAMZvcT/F6n4n7I8UwNLjDYmVSvFo8FJEyBIQl3J43nf4L4liqmuiwMHSuAA5KfQKBgQDEG0dFr1abi4SO8rlIHLzCQN+TDkSvGmW+5s5FSfzDyYBXs9wkqq9SCLdMV9G56F7k/fBzRHboRpQn28agWAkMhcFGoK+F2LV4QAPtqaGmV0twR/wJsq/UVZqtV/z2BRWtSQdSj4vb30x+5V6UFKPRwzozVPOSIYDIxQnGv8UTZwKBgQCuxUafypC7piey8haRUhc0UsAynZvv482cUvFAUiMaySwC6kaWmZC9RrD08lQPk6eedTeyUccTPMI3NEUqEvsks8JsK3VvwK2eZqyiycdTxm8wV8+YiaXrJr5ufC4pTblO0TLvBL9wNglmyyQF2e2pMH0wGoTuiw+MermNxkZTEQJ/NMs+WT71Mb/lUQXbMBQdkjjbxq0CqZi3GuepFylGVRoBLuZRwJthJB2e0OwVifKifK5XDFRZCe9IH5XPGIb/AHD7XCSZzcbTpSJNsydiCCRMvCqnp43b+Ob3n0yErxoBo08qcIHcLbfRsxniC8NikLvGq51nzv5Lhm6Me+YaQg==
+#  # 支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。
+#  publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm7rCHPLGQQRKqCq1f6Dm2RXQeVB7YchX0rlgjU8nHRNRQ86QmhuryVp4o0v4p5N+WSzUM/uAvxW4oFz3NNyqxwYVhEjn9RJmbCmVf//9cMZOSimAGr+idykmKu7cL/bxYBotsHxhr4HcuOz6DRYCyJTVFHvQnNW9wcVEvt3naj1vIzAwdL3embeooOvbcoy/RYD4UVGHpgfN9JqCNGTRwyMmGBBxRCKVsXsJFhlv/eUKiO6fQfSTiW1ywG9VUnePJNIQokTDdjEZaQV5HCPx1t8mAsMxF+a8c+H/zSNRiQtUDlDz75vYdUNfHhh0n78/Cf2Xy/gYxOSTRa73V1/NtwIDAQAB
+#  # 应用ID,您的APPID，收款账号既是您的APPID对应支付宝账号
+#  appId: 2018102161784114
+#  #
+#  charset: UTF-8
+#  # 支付宝网关
+#  gatewayUrl: https://openapi.alipay.com/gateway.do
+#  # 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+#  # e.g.
+#  notifyUrl: http://www.mengpp.com/alipay/payNotify
+#  # 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+#  returnUrl: http://www.mengpp.com/alipay/payReturn
+#  # 签名方式
+#  signType: RSA2
+#  # AES 秘钥
+#  aesKey: mQoYXDRv0xR2GleOzu4DyA==
+
+alipay:
+  # 商户私钥，您的PKCS8格式RSA2私钥
+  privateKey: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDNBRwzujil+C1pxKFqCYFoTU5EVe+Uv3m4MHijY47e6NfKbhFHM0IAMqYES0Lg7lspX/ETDlval7KvWnkZ9H7BuUNOU2LN7Jb+o15sKA83aRkmEFZLVf9tvqLnY6904oxlvlHk4VLa37NikK0vPZM2mwonECHfGwGga2GcNRd3Oc9/cyglMfLt50Ld4qCqH9mzgL3DtoPADPV737nRvx7UTCHBgXsEMNgwWzTAl0nMOgTzEqSGhQthvY2F3O/WHqlYgskRXALJ4tHNFeAs81YNto0l5e+pikOjt+RpnFPmAyVvE8X3bDSPQQGrBFBcAJMkxNx+ZBcPI3rzs2nuxCefAgMBAAECggEAL+D2ohnmKtRXfrDd5U6M+xe6pHjRN5Kz0VD4i2evsNz9sBeeT1toGXW6kZwl5TOk9HekbAfZaaYto4fkaixQAdvLHRqaI28SICt03JtKWm1f4yTDklpmCXIQxyrfidNyaDxXEbWRTO4bDXSuDS87FvCEIXVCA8Fh0t3g8MLxVPUuq0vQYte261irvT8FhHfcsxvTeHvA0qViVXAUnTxLI3wBUaY88nQylPxxTX+oeS5orMJGjxsoDDtJzm3WckP2BtkkFt33ZTgbZh5KJ9V8lyVm6CQ2uJGWI76taSsY22+SAuTKaQm0/5j/in5zFpXBS8GNpkKkAA+Sj7sRUyLsmQKBgQD+PjH9C6yociCOE81aKG1CiVw72Qt/YpbEgOuGpJtWgLjo7wJEMEBmYL4yOOGg73rHMv0QVi7ttem9ci9Pb2oKvXsWTr0j4YfFUtstN0hFXSzKZxkz79zzaaEFU2nysQhShP+4KexrPC3+dbWdRlDYyHsnY9ryGq7MC6kY7cC5SwKBgQDOb9R3vxynUJye6ZVN8RcUsqw3lCNGoQiVIAvmi/KMzOPyl9xr2zI2epM4Ut79zW1vG4vDb1mgO3Pm7hl/jGrIm/J9c9qyftpT2I46F2ljvjzAMZvcT/F6n4n7I8UwNLjDYmVSvFo8FJEyBIQl3J43nf4L4liqmuiwMHSuAA5KfQKBgQDEG0dFr1abi4SO8rlIHLzCQN+TDkSvGmW+5s5FSfzDyYBXs9wkqq9SCLdMV9G56F7k/fBzRHboRpQn28agWAkMhcFGoK+F2LV4QAPtqaGmV0twR/wJsq/UVZqtV/z2BRWtSQdSj4vb30x+5V6UFKPRwzozVPOSIYDIxQnGv8UTZwKBgQCuxUafypC7piey8haRUhc0UsAynZvv482cUvFAUiMaySwC6kaWmZC9RrD08lQPk6eedTeyUccTPMI3NEUqEvsks8JsK3VvwK2eZqyiycdTxm8wV8+YiaXrJr5ufC4pTblO0TLvBL9wNglmyyQF2e2pMH0wGoTuiw+MermNxkZTEQJ/NMs+WT71Mb/lUQXbMBQdkjjbxq0CqZi3GuepFylGVRoBLuZRwJthJB2e0OwVifKifK5XDFRZCe9IH5XPGIb/AHD7XCSZzcbTpSJNsydiCCRMvCqnp43b+Ob3n0yErxoBo08qcIHcLbfRsxniC8NikLvGq51nzv5Lhm6Me+YaQg==
+  # 支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。
+  publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi0ptQlmS/mR40cySoZA+8vGEJr+coC23Z5YdwUqiwHXw4n/XNWWILk9gex7eDk4+K/BS9P2nKdXxGKn+2iWsp4Dk+Lcy0Z3UklhOZYNeVf+N+bBY8XNcnpUrR7PYGZ6vmR0W8PbVMio0jlDXRsar8ie6bKjFBgLL9IR+jlw3vEHuMpDg4WkunIvT4lK+GCZugFQLFesTfx6nd0A6pFRicYWb7xizIVFtE7N0uceOQjvca93jf29nPIpZC9054mDoa/ND7gRhgZm4QkVY14wsJIOt1tdyMt/4lkuPAurSmZTgftU5zlpugZOR4KMrr/CmNfPcF0GZOeYjX64Rf6BaJwIDAQAB
+  # 应用ID,您的APPID，收款账号既是您的APPID对应支付宝账号
+  #  appId: 2088102180516318
+  appId: 2016102100732022
+  #
+  charset: UTF-8
+  # 支付宝网关
+  gatewayUrl: https://openapi.alipaydev.com/gateway.do
+  # 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+  # e.g.
+  notifyUrl: http://www.mengpp.com:8081/alipay/payNotify
+  # 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+  returnUrl: http://www.mengpp.com:8081/alipay/payReturn
+  # 签名方式
+  signType: RSA2
+  # AES 秘钥
+  aesKey: ctLDd6C4zZkLWm7KY9Okcw==

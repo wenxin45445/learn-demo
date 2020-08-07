@@ -45,6 +45,7 @@
         <module>cache-demo</module>
         <module>game-server</module>
         <module>shardingsphere</module>
+        <module>file-service</module>
     </modules>
 
     <dependencyManagement>
