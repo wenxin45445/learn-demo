@@ -46,6 +46,7 @@
         <module>game-server</module>
         <module>shardingsphere</module>
         <module>file-service</module>
+        <module>websocket-server</module>
     </modules>
 
     <dependencyManagement>
