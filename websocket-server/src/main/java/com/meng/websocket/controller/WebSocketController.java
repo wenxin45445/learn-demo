@@ -18,7 +18,8 @@ public class WebSocketController {
     }
 
     @GetMapping("/webSocket")
-    public ModelAndView webSocket(){
-        return new ModelAndView("/webSocket");
+    public String webSocket(){
+        return "webSocket";
+//        return new ModelAndView("/webSocket");
     }
 }

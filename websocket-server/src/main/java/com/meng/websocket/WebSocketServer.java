@@ -8,6 +8,8 @@ import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -24,9 +26,11 @@ public class WebSocketServer {
     /**
      * 发送消息
      */
-    public void sendMessage(Session session, String message) throws IOException {
+    public void sendMessage(Session session, String message) throws IOException, EncodeException {
         if (session != null) {
-            session.getBasicRemote().sendText(message);
+//            session.getBasicRemote().sendText(message);
+            ByteBuffer byteBuffer = ByteBuffer.wrap(message.getBytes());
+            session.getBasicRemote().sendBinary(byteBuffer);
         }
     }
 
@@ -46,6 +50,7 @@ public class WebSocketServer {
     public void onOpen(Session session, @PathParam(value = "sid") String userId){
         clientSessions.put(userId, session);
         addOnlineNum();
+        logger.debug("connect success,sessionId:{}, userID:{}, 当前人数:{}", session.getId(), userId, clientSessions.size());
         try{
             sendMessage(session, "欢迎" + userId + "加入，当前人数：" + clientSessions.size());
         }catch (Exception e) {

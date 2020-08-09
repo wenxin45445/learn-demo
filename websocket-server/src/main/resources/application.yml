@@ -1,0 +1,21 @@
+
+server:
+  port: 7000
+spring:
+  application:
+    name: websocket-server
+  freemarker:
+    charset: UTF-8
+    request-context-attribute: request
+    settings:
+      number_format: 0.##########
+    suffix: .html
+    templateLoaderPath: classpath:/templates/
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /static/pages/
+      #      prefix: /templates/
+      suffix: .html
+  resources:
+    static-locations: classpath:/static/
